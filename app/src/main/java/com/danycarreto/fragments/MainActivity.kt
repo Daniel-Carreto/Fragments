@@ -1,5 +1,6 @@
 package com.danycarreto.fragments
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -19,6 +20,11 @@ class MainActivity : AppCompatActivity(), DiscountEventListener {
 
         //Toast.makeText(this, "Bienvenido", Toast.LENGTH_LONG).show()
 
+        btnDetail.setOnClickListener {
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra(DETAIL_PARAM,"From Discount")
+            startActivity(intent)
+        }
 
     }
 
